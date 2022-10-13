@@ -13,14 +13,14 @@
 						<view class="left">
 						</view>
 						<view class="right">
-							{{item.name}}
+							{{item.title}}
 						</view>
 					</view>
 				</scroll-view>
 			</view>
 
 			<view class="list">
-				<view class="every" v-for="(item,index) in 9">
+				<view class="every" v-for="(item,index) in 9" @tap="toDetails(item)">
 					<u-image src="/static/img/tab-01.png" width="137px" height="160px" class="commImage"></u-image>
 					<view class="name">
 						香飘飘奶茶
@@ -40,39 +40,26 @@
 			</view>
 		</view>
 
-
-
 	</view>
 </template>
 
 <script>
+	import {
+		log
+	} from 'util';
+	import {
+		getAllCategory
+	} from '../../api/index.js'
 	export default {
 		data() {
 			return {
-				menuList: [{
-						id: 1,
-						name: '水果'
-					},
-					{
-						id: 2,
-						name: '蔬菜'
-					}, {
-						id: 3,
-						name: '电子产品'
-					}, {
-						id: 4,
-						name: '运动衣'
-					}, {
-						id: 5,
-						name: '手工'
-					}
-				],
-				keyword: '啊',
-				selectId: '1',
+				menuList: [],
+				keyword: '',
+				selectId: '',
 			}
 		},
 		onLoad() {
-
+			this.getAllCategory();
 		},
 		methods: {
 			swichMenu(id) {
@@ -80,6 +67,20 @@
 			},
 			search() {
 				console.log(this.keyword);
+			},
+
+			getAllCategory() {
+				getAllCategory().then(res => {
+					this.menuList = res.list;
+					this.selectId = res.list[0].id;
+					console.log('resssss', res);
+
+				})
+			},
+			toDetails(item) {
+				uni.navigateTo({
+					url: '/pages_commodity/details/index?value=' + item
+				})
 			}
 		}
 	}
@@ -169,6 +170,9 @@
 						display: flex;
 						align-items: center;
 						justify-content: space-between;
+						.price{
+							color: #ff0000;
+						}
 
 					}
 
@@ -177,7 +181,8 @@
 						height: 160px;
 					}
 				}
-				.every:last-child{
+
+				.every:last-child {
 					margin-bottom: 20px;
 				}
 			}

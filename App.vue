@@ -16,7 +16,9 @@
 	/*每个页面公共css */
 	@import "uview-ui/index.scss";
 	@import 'static/css/iconfont.css';
+	@import "common/css/common.css";
 	uni-page-wrapper{
+		// background: $uni-bg-color-grey;
 		background: #f2f2f2;
 	}
 </style>

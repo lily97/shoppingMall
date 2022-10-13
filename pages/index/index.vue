@@ -1,6 +1,8 @@
 <template>
-	<view class="content">
-	
+	<view class="">
+		<u-button type="primary" text="echarts" @tap="toEcharts()"></u-button>
+		<u-button type="primary" text="ucharts" @tap="toUcharts()"></u-button>
+		<u-button type="primary" text="map" @tap="toMap()"></u-button>
 	</view>
 </template>
 
@@ -8,23 +10,35 @@
 	export default {
 		data() {
 			return {
+
 			}
 		},
 		onLoad() {
 
 		},
-		methods: {
 
+		methods: {
+			toEcharts() {
+				uni.navigateTo({
+					url: '/pagesExample/echarts'
+				})
+			},
+			toUcharts() {
+				uni.navigateTo({
+					url: '/pagesExample/ucharts'
+				})
+			},
+			toMap() {
+				uni.navigateTo({
+					url: '/pagesExample/map'
+				})
+			},
 		}
 	}
 </script>
 
-<style>
-	.content {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-content: center;
-	}
-
+<style lang="scss">
+uni-button{
+	margin-bottom: 20px;
+}
 </style>

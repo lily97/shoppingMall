@@ -1,30 +1,58 @@
 @font-face {
-	font-family: "iconfont";
-	/* Project id 3690536 */
-	src: url('~@/static/css/iconfont.ttf') format('truetype');
-	/*引入文件的时候不要写相对路径 否则图标不显示*/
+  font-family: "iconfont"; /* Project id 3690536 */
+ src: url('~@/static/css/iconfont.ttf') format('truetype');
+ 	/*引入文件的时候不要写相对路径 否则图标不显示*/
 }
 
 .iconfont {
-	font-family: "iconfont" !important;
-	font-size: 16px;
-	font-style: normal;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-shoucang:before {
+  content: "\e602";
+}
+
+.icon-dianpu:before {
+  content: "\e736";
+}
+
+.icon-kefu:before {
+  content: "\e625";
+}
+
+.icon-huodong:before {
+  content: "\e93a";
+}
+
+.icon-youhuiquan:before {
+  content: "\e8c8";
+}
+
+.icon-right:before {
+  content: "\e6cf";
+}
+
+.icon-cart:before {
+  content: "\e601";
+}
+
+.icon-share:before {
+  content: "\e86e";
 }
 
 .icon-fenlei:before {
-	content: "\e61b";
+  content: "\e61b";
 }
 
 .icon-gouwuche:before {
-	content: "\e73d";
-}
-
-.icon-shouyeshouye:before {
-	content: "\9996";
+  content: "\e73d";
 }
 
 .icon-my:before {
-	content: "\e600";
+  content: "\e600";
 }
+
